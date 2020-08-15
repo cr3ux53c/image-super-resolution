@@ -136,8 +136,8 @@ pip-selfcheck.json
 # Custom
 weights/*
 !weights/sample_weights
-data/*
-!data/input
+data/
+results/
 .DS_Store
 .idea
 log_file
