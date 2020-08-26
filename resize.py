@@ -6,22 +6,23 @@ import os
 import numpy as np
 
 dataset_list = [
-    join('data', 'input', 'chest_xray', 'test', 'NORMAL'),
-    join('data', 'input', 'chest_xray', 'test', 'PNEUMONIA'),
-    join('data', 'input', 'chest_xray', 'train', 'NORMAL'),
-    join('data', 'input', 'chest_xray', 'train', 'PNEUMONIA'),
-    join('data', 'input', 'chest_xray', 'val', 'NORMAL'),
-    join('data', 'input', 'chest_xray', 'val', 'PNEUMONIA'),
+    # join('data/input/chest_xray', 'test', 'NORMAL'),
+    # join('data/input/chest_xray', 'test', 'PNEUMONIA'),
+    # join('data/input/chest_xray', 'train', 'NORMAL'),
+    # join('data/input/chest_xray', 'train', 'PNEUMONIA'),
+    join('data/input/chest_xray', 'val', 'NORMAL'),
+    join('data/input/chest_xray', 'val', 'PNEUMONIA'),
 ]
 
 resize_list = [
-    256,
-    700,
-    1000,
+    224,
+    # 256,
+    # 700,
+    # 1000,
 ]
 
 for dataset_dir in dataset_list:
-    data_list = glob.glob(join(dataset_dir, '*.jpeg'))
+    data_list = glob.glob(join(dataset_dir, '*.png'))
 
     for size in resize_list:
         for data_path in data_list:

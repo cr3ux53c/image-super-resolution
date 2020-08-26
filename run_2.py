@@ -8,20 +8,21 @@ from PIL import Image
 from ISR.models import RDN, RRDN
 
 model_list = [
-    RDN(weights='psnr-small'),
+    # RDN(weights='psnr-small'),
     # RDN(weights='psnr-large'),
-    # '',
-    # '',
     # RDN(weights='noise-cancel'),
-    # RRDN(weights='gans'),
+    '',
+    '',
+    '',
+    RRDN(weights='gans'),
 ]
 
 dataset_list = [
-    # join('data', 'input', 'chest_xray', 'test', 'NORMAL'),
-    # join('data', 'input', 'chest_xray', 'test', 'PNEUMONIA'),
-    # join('data', 'input', 'chest_xray', 'train', 'NORMAL'),
-    # join('data', 'input', 'chest_xray', 'train', 'PNEUMONIA'),
-    # join('data', 'input', 'chest_xray', 'val', 'NORMAL'),
+    join('data', 'input', 'chest_xray', 'test', 'NORMAL'),
+    join('data', 'input', 'chest_xray', 'test', 'PNEUMONIA'),
+    join('data', 'input', 'chest_xray', 'train', 'NORMAL'),
+    join('data', 'input', 'chest_xray', 'train', 'PNEUMONIA'),
+    join('data', 'input', 'chest_xray', 'val', 'NORMAL'),
     join('data', 'input', 'chest_xray', 'val', 'PNEUMONIA'),
 ]
 
@@ -35,7 +36,7 @@ resize_list = [
 
 for mod_idx, model in enumerate(model_list):
 
-    # if mod_idx < 2: continue # mod0, mod1 스킵
+    if mod_idx < 3: continue # mod0, mod1 스킵
 
     for dataset_idx, dataset_dir in enumerate(dataset_list):
 
